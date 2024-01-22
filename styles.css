@@ -2,13 +2,15 @@
   --black: #151818;
   --grey: #323b3b;
   --white: #d9f5f5;
+  --light-green: #8cd8a3;
   --border-radius: 8px;
   --spacing-xs: 5px;
   --spacing-sm: 10px;
   --spacing-md: 15px;
   --spacing-lg: 20px;
   --spacing-xl: 40px;
-  --font-md: 18px;
+  --font-sm: 18px;
+  --font-md: 20px;
   --font-lg: 24px;
   --container-width: 1200px;
   --shadow: rgba(21, 24, 24, 0.655) 1px 1px 4px;
@@ -34,7 +36,7 @@ body {
   background-color: var(--grey);
   color: var(--white);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: var(--font-md);
+  font-size: var(--font-sm);
   word-break: break-word;
   /* footer support */
   margin-bottom: 100px;
@@ -79,6 +81,10 @@ input[type='number'] {
   background-color: var(--grey);
 }
 
+.btn-light-green {
+  background-color: var(--light-green);
+}
+
 /* HEADER */ 
 
 .header {
@@ -97,4 +103,79 @@ input[type='number'] {
 .main {
   margin-top: var(--spacing-lg);
   text-align: center;
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: var(--font-md);
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  background-color: var(--black);
+  box-shadow: var(--shadow);
+  line-height: 1.2;
+}
+
+/* FOOTER */
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  width: 100%;
+  padding: var(--spacing-sm);
+}
+
+.github-logo {
+  height: var(--font-lg);
+}
+
+/* DIALOG */
+
+.add-book-dialog {
+  position: fixed;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  background-color: var(--black);
+  text-align: center;
+  transform: scale(0);
+  transition: 0.2s ease-in-out;
+}
+
+.add-book-dialog.active {
+  transform: scale(1);
+}
+
+.add-book-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.add-book-form button {
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius);
 }
