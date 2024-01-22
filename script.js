@@ -33,15 +33,19 @@ const addBookBtn = document.getElementById('addBookBtn');
 const addBookModal = document.getElementById('addBookModal');
 const overlay = document.getElementById('overlay');
 const addBookForm = document.getElementById('addBookForm');
+const title = document.getElementById('title');
+const author = document.getElementById('author');
+const pages = document.getElementById('pages');
+
 const booksGrid = document.getElementById('booksGrid');
 
-function openAddBookDialog() {
+function openAddBookModal() {
   addBookForm.reset();
-  addBookDialog.show();
+  addBookModal.classList.add('active');
 }
 
-function closeAddBookDialog() {
-  addBookDialog.close();
+function closeAddBookModal() {
+  addBookModal.classList.remove('active');
 }
 
 function createBookCard(book) {
@@ -83,12 +87,12 @@ function createBookCard(book) {
 }
 
 addBookBtn.addEventListener("click", () => {
-  addBookModal.classList.add('active');
+  openAddBookModal();
   overlay.classList.add('active');
 })
 
 overlay.addEventListener("click", () => {
-  addBookModal.classList.remove('active');
+  closeAddBookModal();
   overlay.classList.remove('active');
 })
 
