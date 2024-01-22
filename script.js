@@ -30,7 +30,8 @@ function removeBook(title) {
 
 // User Interface
 const addBookBtn = document.getElementById('addBookBtn');
-const addBookDialog = document.getElementById('addBookDialog');
+const addBookModal = document.getElementById('addBookModal');
+const overlay = document.getElementById('overlay');
 const addBookForm = document.getElementById('addBookForm');
 const booksGrid = document.getElementById('booksGrid');
 
@@ -80,6 +81,16 @@ function createBookCard(book) {
   bookCard.appendChild(buttonGroup);
   booksGrid.appendChild(bookCard);
 }
+
+addBookBtn.addEventListener("click", () => {
+  addBookModal.classList.add('active');
+  overlay.classList.add('active');
+})
+
+overlay.addEventListener("click", () => {
+  addBookModal.classList.remove('active');
+  overlay.classList.remove('active');
+})
 
 // Testing
 let theHobbit = new Book("The Hobbit", "Tolkien", 295, true);

@@ -21,13 +21,14 @@
     <p>copyright &copy; 2024 lucas lija</p>
     <a href="https://github.com/lucaslija" target="_blank"><img class="github-logo" src="./images/github-mark-white.png" alt="github logo"></a>
   </footer>
-  <dialog class="add-book-dialog" id="addBookDialog">
+  <div class="add-book-modal" id="addBookModal">
     <form class="add-book-form" id="addBookForm">
       <input type="text" class="input" id="title" placeholder="title" required maxlength="100">
       <input type="text" class="input" id="author" placeholder="author" required maxlength="100">
       <input type="text" class="input" id="pages" placeholder="pages" required max="10000">
       <button class="btn btn-light-green" type="submit">add book</button>
     </form>
-  </dialog>
+  </div>
+  <div class="overlay" id="overlay"></div>
 </body>
 </html>
