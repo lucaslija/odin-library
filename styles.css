@@ -3,6 +3,7 @@
   --grey: #323b3b;
   --white: #d9f5f5;
   --light-green: #8cd8a3;
+  --light-red: #e3acac;
   --border-radius: 8px;
   --spacing-xs: 5px;
   --spacing-sm: 10px;
@@ -69,6 +70,7 @@ input[type='number'] {
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--border-radius);
   transition: filter 0.15s ease-in-out;
+  background-color: var(--grey);
 }
 
 .btn:hover {
@@ -78,11 +80,14 @@ input[type='number'] {
 .btn-add {
   font-size: var(--font-lg);
   font-weight: bold;
-  background-color: var(--grey);
 }
 
 .btn-light-green {
   background-color: var(--light-green);
+}
+
+.btn-light-red {
+  background-color: var(--light-red);
 }
 
 /* HEADER */ 
